@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+
+
+body{
+	font-family:Arial,HelVetica,Geneva,sans-serif;
+	font-size:20px;
+	 
+}
+table,th,td{
+	border: 2px solid black;
+	border-collapse:collapse;
+	
+}
+
+th,td{
+	text-align:left;
+}
+
+h6{
+	font-family:Arial,HelVetica,Geneva,sans-serif;
+	
+	color:#ff0000;
+}
+.err{
+	
+	font-family:Arial,HelVetica,Geneva,sans-serif;
+	
+	color:#ff0000;
+	
+}
+.error{
+	
+	font-family:Arial,HelVetica,Geneva,sans-serif;
+	
+	color:#ff0000;
+	
+}

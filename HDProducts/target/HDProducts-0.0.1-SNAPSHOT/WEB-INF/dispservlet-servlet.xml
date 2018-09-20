@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!-- 
+ <beans 
+xmlns:mvc="http://www.springframework.org/schema/mvc" 
+ xmlns:tx="http://www.springframework.org/schema/tx" 
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns="http://www.springframework.org/schema/beans"
+
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+ http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+ http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd ">
+
+   <mvc:annotation-driven/>
+
+	<context:component-scan base-package="org.jc.kp.demoController"/>
+   
+	
+		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property value="org.springframework.web.servlet.view.JstlView" name="viewClass"/>
+			<property value="/WEB-INF/views/products/" name="prefix"/>
+			<property value=".jsp" name="suffix"/>
+		</bean>
+		 
+	<context:property-placeholder location="classpath:db.properties" /> 	
+			<bean id="dataSource"
+		      class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property value="${jdbc.driverClassName}" name="driverClassName"/>
+		<property value="${jdbc.url}" name="url"/>
+		<property value="${jdbc.username}" name="username"/>
+		<property value="${jdbc.password}" name="password"/>
+		</bean>
+		 
+		<bean id="sessionFactory"
+		      class="org.springframework.orm.hibernate4.LocalSessionFactoryBean.class">
+		      <property name="dataSource" ref="dataSource"/>
+		      <property name="annotatedClasses">
+		           <list>
+		      			<value>org.jc.kp.model.Products</value>
+		      		</list>
+		      </property>
+		      <property name="hibernateProperties">
+		            <props>
+		               <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+		                <prop key="hibernate.hbm2ddl.auto">update</prop>
+		               <prop key="hibernate.show_sql">true</prop>
+		            </props>
+		      </property>
+		  </bean>
+		
+		   <tx:annotation-driven />
+ <bean id="transactionManager"
+  class="org.springframework.orm.hibernate4.HibernateTransactionManager.class">
+  <property name="sessionFactory" ref="sessionFactory" />
+ </bean>
+ </beans>
+	 -->
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+	
