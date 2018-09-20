@@ -232,5 +232,13 @@ public class UserController {
 		}
 		}
 	    
+	    @RequestMapping(value = "/example", method = RequestMethod.GET)
+		  public ModelAndView example() {
+		ModelAndView model =new ModelAndView();
+		 User user=new User();
+	      model.addObject("user", user);
+		model.setViewName("loginPWDChange");
+		return model;
+	    }
 	    
 }
