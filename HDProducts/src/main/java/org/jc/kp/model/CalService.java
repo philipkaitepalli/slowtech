@@ -1,7 +1,5 @@
 package org.jc.kp.model;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Service;
 
 @Service("CalService")

@@ -72,29 +72,21 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void changeLoginStsatus(User user) {
-		
 		Integer x=user.getUserId();
 		Integer y=user.getLoginStatus();
-		
-		User u= (User) currentSession().load(
-				User.class,x);
+		User u= (User) currentSession().load(User.class,x);
 		u.setLoginStatus(y);
 				currentSession().update(u);
-		
 	}
 
 	@Override
 	public void changeRoll(User user) {
 		// TODO Auto-generated method stub
-	
 		Integer x=user.getUserId();
 		Integer y=user.getRoll();
-		
-		User u= (User) currentSession().load(
-				User.class,x);
+		User u= (User) currentSession().load(User.class,x);
 		u.setRoll(y);
-				currentSession().update(u);
-		
+		currentSession().update(u);
 	}
 
 	@Override
@@ -115,7 +107,7 @@ public class UserDaoImpl implements UserDao {
 		} catch (NullPointerException e) {
 			// TODO Auto-generated catch block
 			
-			System.out.println("ooooooooooo");
+			
 			return null;
 		}catch(Exception e) {
 			
@@ -129,8 +121,7 @@ public class UserDaoImpl implements UserDao {
 	public void updateUserPWD(User user) {
 		Integer x=user.getUserId();
 		String psw=user.getPassword();
-		User u= (User) currentSession().load(
-				User.class,x);
+		User u= (User) currentSession().load(User.class,x);
 		u.setPassword(psw);
 				currentSession().update(u);
 	}
