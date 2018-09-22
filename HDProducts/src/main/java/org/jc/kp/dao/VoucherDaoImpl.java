@@ -76,11 +76,17 @@ public class VoucherDaoImpl implements VoucherDao {
 	@Override
 	public void deleteVoucher(Customer customer) {
 		// TODO Auto-generated method stub
-		Integer x=customer.getCustomerId();
 		
-		currentSession().createQuery("delete Voucher where custId="+x)
 		
-		.executeUpdate();
+		try {
+			Integer x=customer.getCustomerId();
+			currentSession().createQuery("delete Voucher where custId="+x)
+			
+			.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
 		
 		 /* String deleteQuery = "delete from students where joinDate= :joinDate";
 	      Query query = session.createQuery(deleteQuery);

@@ -24,7 +24,7 @@ public class BillsList {
 	private PreBillPickerService preBillPickerService;
 	@Autowired
 	private VoucherService voucherService;
-	Integer x=0;
+	
 	Customer customer=new Customer(); 
 	Voucher voucher=new Voucher();
 	Customer culist;
@@ -77,20 +77,39 @@ public class BillsList {
 	 @RequestMapping(value = "/deltVoucher")
 	    public ModelAndView deltCustVoucher() {
 		 ModelAndView model=new ModelAndView();
-		 if(x.equals(0))
-		 {
-			 model.addObject("x",x);
-			 x=x+1;
-			 model.addObject("err","Are you sure to delete all "+culist.getCustFirstName()+"list");
-			 model.setViewName("customerBillsList");
+		
+		 model.addObject("cust",culist);
+		 model.setViewName("confDeltCustomerBillsList");
+	        return model;
+			 }
+	 @ResponseBody
+	 @RequestMapping(value = "/deltVoucherYes")
+	    public ModelAndView deltCustVoucherYes() {
+		 ModelAndView model=new ModelAndView();
+		 try {
+			voucherService.deleteVoucher(culist);
+			 dayWiseBillsService.delete(culist);
+			 model.addObject("err","items are deleted ");
+			 model.addObject("cust",culist);
+			 model.setViewName("deletedCustomerBillList");
 		        return model;
-		 }else {
-			 x=0;	
-		 voucherService.deleteVoucher(culist);
-		 dayWiseBillsService.delete(culist);
-		 model.addObject("err","item is deleted ");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			
+			 model.addObject("err","Enter customer first name & last name.... ");
+			 model.setViewName("deletedCustomerBillList");
+		        return model;
+		}
+		
+			 }
+	 
+	 @RequestMapping(value = "/deltVoucherNo")
+	    public ModelAndView deltCustVoucherNo() {
+		 ModelAndView model=new ModelAndView();
+		 
+		 model.addObject("cust",culist);
 		 model.setViewName("customerBillsList");
 	        return model;
-		 }
+		 
 			 }
 }

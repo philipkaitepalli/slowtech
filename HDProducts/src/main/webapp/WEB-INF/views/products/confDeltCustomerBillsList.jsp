@@ -49,13 +49,21 @@
     <td height=270px>
    <!--  page content--> 
    <c:if test="${sessionScope.userId!=null && sessionScope.userRoll==1}">
-  <form action="/HDProducts/billsList/deltVoucher" >
-   <input  type="submit" value="Delete"/>
+   <center>
+   <table><tr><td>
+   Do you want to delete ${cust.custFirstName}.${cust.custLastName}</td></tr>
+  <tr><td><form action="/HDProducts/billsList/deltVoucherYes" >
+   <input  type="submit" value="YES"/>
      </form>
+   </td><td>
+     <form action="/HDProducts/billsList/deltVoucherNo" >
+   <input  type="submit" value="NO"/>
+     </form></td></tr>
+     </table></center>
 </c:if>
 
 <center><p>${err}</p></center>
-
+<%--
 <c:if test="${x==0}">
   <form action="/HDProducts/billsList/nodeltVoucher" >
    <input  type="submit" value="no"/>
@@ -68,7 +76,7 @@
  <tr><td>Customer first name:</td><td><input size=18 type="text" name="cfn" id="cfn" ></td><td>Customer last name</td><td><input size=18 type="text" name="cln" id="cln" ></td><td><input type="submit" value="submmit"/></td></tr> 
   </table></form> 
   <center>
-  <div id='block1'>
+   <div id='block1'>
   <table border="1"> <tr><td colspan="2"><table>
 <tr><td>cust_Id:</td><td>${cust.customerId}</td></tr>
 <tr><td>F.Name:</td><td>${cust.custFirstName}</td></tr>
@@ -97,9 +105,10 @@
             </c:forEach>
             <tr><td  align="right">paid amount=</td><td>${amount}</td><td align="right">Due=</td><td>${due}</td><td colspan='4' align="right">Grand Total=</td><td>${t}</td></tr>
             </table>
-            </div>
+           
             <input type="button" value="Print..." onclick="printPage('block1');"></input>
             </center>
+             </div> --%>
 </td>
   </tr>
   <tr>

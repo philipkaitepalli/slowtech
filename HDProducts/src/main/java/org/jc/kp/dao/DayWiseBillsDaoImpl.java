@@ -49,9 +49,14 @@ public class DayWiseBillsDaoImpl implements DayWiseBillsDao {
 	@Override
 	public void delete(Customer customer) {
 		// TODO Auto-generated method stub
-      Integer x=customer.getCustomerId();
-      currentSession().createQuery("delete DayWiseBills where customerId="+x)
-      .executeUpdate();
+      try {
+		Integer x=customer.getCustomerId();
+		  currentSession().createQuery("delete DayWiseBills where customerId="+x)
+		  .executeUpdate();
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		//e.printStackTrace();
+	}
 		
 	}
 
