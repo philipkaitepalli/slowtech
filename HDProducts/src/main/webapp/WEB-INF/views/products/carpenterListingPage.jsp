@@ -47,14 +47,14 @@
       
     <div align="center"  >
    <div id="block1">
-        <table border="1">
+        <table border="1"><tr>
             <th>carpId</th>
             <th>carpPhoneNo</th>
             <th>carpFirstName</th>
             <th>carpLastName</th>
             <th>carpAddress</th>
            
-            <th colspan="2">Action</th>
+            <th colspan="2">Action</th></tr>
  
  
             <c:forEach var="carpenter" items="${listcarpenter}">

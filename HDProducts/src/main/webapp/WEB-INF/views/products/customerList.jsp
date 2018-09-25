@@ -48,7 +48,7 @@
       
     <div align="center"  >
    <div id="block1">
-        <table border="1">
+        <table border="1"><tr>
             <th>customerId</th>
             <th>carpId</th>
             <th>custPhoneNo</th>
@@ -56,7 +56,7 @@
             <th>custLastName</th>
             <th>custAddress</th>
            
-            <th colspan="2">Action</th>
+            <th colspan="2">Action</th></tr>
  
  
             <c:forEach var="customer" items="${listcustomer}">

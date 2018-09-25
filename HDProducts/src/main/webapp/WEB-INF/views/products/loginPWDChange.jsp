@@ -43,7 +43,7 @@
         <tr>
         <td>Enter New password :</td>
         <td><form:password path="password" /></td>
-       </tr>
+       </tr><tr>
          <td colspan="2" align="center"><input type="submit" value="submit"/></td>
      </tr>
         </form:form>
